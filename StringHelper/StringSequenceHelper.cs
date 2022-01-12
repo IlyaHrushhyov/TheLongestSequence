@@ -1,33 +1,39 @@
-﻿using System.Text.RegularExpressions;
+﻿using Helpers;
+using System.Text.RegularExpressions;
 
 namespace StringHelper
 {
-    public static class StringHelper
+    public static class StringSequenceHelper
     {
-        public static List<string> FindMaxSequenceForEveryWord(string str)
+        private static List<string> GetAllWords(string incomingString)
         {
-            if (str == null)
-            {
-                throw new ArgumentNullException("str");
-            }
-
-            var result = new List<string>();
-
             // Delete all tabs
-            string withoutTabs = Regex.Replace(str, @"\s+", " ");
+            string withoutTabs = Regex.Replace(incomingString, @"\s+", " ");
 
             // Get all words
-            var words = withoutTabs.Split(' ').ToList();
+            List<string> words = withoutTabs.Split(' ').ToList();
+
+            return words;
+        }
+
+        public static List<SequenceData> FindMaxSequenceForEveryWord(string incomingString)
+        {
+            if (incomingString == null)
+            {
+                throw new ArgumentNullException(nameof(incomingString));
+            }
+
+            List<string> words = GetAllWords(incomingString);
+
+            var result = new List<SequenceData>(words.Count);
 
             // Find different characters for every word
             int wordMaximum = 0;
             string currentCharacter = default;
             int currentMax = default;
-
             // Running through all words
             foreach (var word in words)
             {
-
                 // Running through all characters
                 for (int j = 0; j < word.Length; j++)
                 {
@@ -41,19 +47,19 @@ namespace StringHelper
                     {
                         if (currentMax > wordMaximum)
                         {
-                            currentCharacter = word[j-1].ToString();
+                            currentCharacter = word[j - 1].ToString();
                             wordMaximum = currentMax;
                         }
-
                         currentMax = 1;
                     }
                 }
-                result.Add(currentCharacter.ToString() + " " + wordMaximum.ToString());
+                result.Add(new SequenceData(currentCharacter, wordMaximum));
 
-                wordMaximum = 0;
-                currentMax = 0;
+                wordMaximum = default;
+                currentMax = default;
             }
             return result;
         }
+
     }
 }

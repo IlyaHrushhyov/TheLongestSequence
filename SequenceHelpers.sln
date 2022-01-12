@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheLongestSequence", "TheLongestSequence\TheLongestSequence.csproj", "{0672D196-6F5F-4D81-80F0-AAB5A17B7A35}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Main", "TheLongestSequence\Main.csproj", "{0672D196-6F5F-4D81-80F0-AAB5A17B7A35}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "StringHelper\Helpers.csproj", "{05E70689-3EF0-471F-903C-7997BF2A39C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequenceHelperTests", "SequenceHelperTests\SequenceHelperTests.csproj", "{B408D3B0-2C91-4C7C-87CD-0B2D13968069}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{05E70689-3EF0-471F-903C-7997BF2A39C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05E70689-3EF0-471F-903C-7997BF2A39C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05E70689-3EF0-471F-903C-7997BF2A39C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B408D3B0-2C91-4C7C-87CD-0B2D13968069}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B408D3B0-2C91-4C7C-87CD-0B2D13968069}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B408D3B0-2C91-4C7C-87CD-0B2D13968069}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B408D3B0-2C91-4C7C-87CD-0B2D13968069}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
